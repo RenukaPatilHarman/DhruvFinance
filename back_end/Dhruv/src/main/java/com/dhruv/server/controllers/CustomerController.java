@@ -17,21 +17,21 @@ import com.dhruv.server.repository.ICustomerRepository;
 @RestController
 @RequestMapping(path = "/customer")
 public class CustomerController {
-	
+
 	@Autowired
 	ICustomerRepository repository;
-	
+
 	@GetMapping("/allCustomers")
-	public List<Customer> getAllCustomers(){
+	public List<Customer> getAllCustomers() {
 		List<Customer> customers = repository.findAll();
 		return customers;
 	}
-	
+
 	@PostMapping("/addCustomer")
-	public ResponseEntity<?> addCustomer(@RequestBody Customer customer){
-		if(repository.save(customer) != null)
+	public ResponseEntity<?> addCustomer(@RequestBody Customer customer) {
+		if (repository.save(customer) != null)
 			return new ResponseEntity<>(null, HttpStatus.CREATED);
-			else
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		else
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 	}
 }
