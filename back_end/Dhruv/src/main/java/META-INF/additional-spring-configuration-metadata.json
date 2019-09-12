@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "com.dhruv.server.user.admin.id",
+    "type": "java.lang.String",
+    "description": "Super Admin users login id"
+  },
+  {
+    "name": "com.dhruv.server.user.admin.password",
+    "type": "java.lang.String",
+    "description": "Super Admin users login password"
+  }
+]}
